@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.astro.test.berghie.data.defaultUsers
+import com.astro.test.berghie.ui.BrowseUser
 import com.astro.test.berghie.ui.UserList
 import com.astro.test.berghie.ui.theme.AstroUserGitTheme
 
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   UserFromGit()
+                   UserFromGit("sa")
                 }
             }
         }
@@ -32,14 +33,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun UserFromGit() {
-    UserList(users = defaultUsers)
+fun UserFromGit(user  : String) {
+    BrowseUser(user = user)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun UserFromGitPreview() {
     AstroUserGitTheme {
-        UserFromGit()
+        UserFromGit("sa")
     }
 }
