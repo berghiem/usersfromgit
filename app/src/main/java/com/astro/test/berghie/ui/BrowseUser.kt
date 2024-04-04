@@ -28,7 +28,10 @@ fun BrowseUser(user : String){
             placeholder = {
                 Text(text = user)
             })
-        UserList(users = defaultUsers)
+        if (input.length > 0){
+            UserList(users = defaultUsers)
+        }
+
     }
 
 }

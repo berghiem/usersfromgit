@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   UserFromGit("sa")
+                   UserFromGit("find a user")
                 }
             }
         }
