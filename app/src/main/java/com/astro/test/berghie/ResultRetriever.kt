@@ -22,7 +22,7 @@ class ResultRetriever {
     }
 
     fun getResult(callback: Callback<Result>, keyword : String){
-        val call = service.findUser(keyword)
+        val call = service.findUser(keyword,5)
         call.enqueue(callback)
     }
 

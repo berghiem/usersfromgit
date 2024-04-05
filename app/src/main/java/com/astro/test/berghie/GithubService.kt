@@ -13,5 +13,5 @@ interface GithubService {
     fun getUsers(): Call<Result>
 
     @GET("/search/users")
-    fun findUser(@Query("q") q:String) : Call<Result>
+    fun findUser(@Query("q") q:String,@Query("per_page") p:Int) : Call<Result>
 }
