@@ -1,6 +1,6 @@
 package com.astro.test.berghie.ui
 
-import androidx.compose.foundation.Image
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,24 +18,30 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
+import com.astro.test.berghie.R
+import com.astro.test.berghie.data.Item
+import com.astro.test.berghie.data.Result
 import com.astro.test.berghie.data.User
 import com.astro.test.berghie.data.defaultUsers
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
-
+import coil.compose.AsyncImage
 @Composable
-fun UserCard(user : User){
+fun UserCard(user : Item){
     Column {
         Row{
-            Image(
-                painterResource(user.imageResource),
+
+            AsyncImage(
+                model = user.avatar_url,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(35.dp)
-                    .clip(CircleShape) )
+                    .clip(CircleShape)
+            )
             Column {
-                Text(user.userName, Modifier.padding(2.dp))
-                Text(user.fullName, Modifier.padding(2.dp))
+                Text(user.login, Modifier.padding(2.dp))
+                Text(user.url, Modifier.padding(2.dp))
             }
         }
 
